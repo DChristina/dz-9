@@ -5,14 +5,25 @@ public class Woman extends Person{
         super(firstName, lastName, age);
         this.maidenlastName = lastName;
     }
+
+    @Override
+    public boolean isRetired() {
+        return (this.getAge()>=60);
+    }
+
     public void registerPartnership(Person partner){
-        super.setLastName(partner.getLastName());
+        if (getPartner() == null) {
+            super.setLastName(partner.getLastName());
+
+        }
     }
 
     public void  deregisterPartnership(Boolean divorceHappend){
         if (divorceHappend){
+            setPartner(null);
             this.setLastName(maidenlastName);
         }
+
     }
 
     public String getMaidenlastName() {

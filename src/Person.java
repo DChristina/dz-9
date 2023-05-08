@@ -1,6 +1,6 @@
 
 
-public class Person {
+public abstract class Person {
     private String firstName;
     private String lastName;
     private int age;
@@ -15,7 +15,7 @@ public class Person {
     }
 
     public boolean isRetired(){
-            return (this.getAge()>=60);
+            return false;
     }
 
     public Person getPartner() {
